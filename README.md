@@ -11,6 +11,56 @@ If you want more context go to my blog post:
 
 > Important note: this is not a cheatsheet for performing real penetration tests or real Red Teaming; this is a collection of commands created with minimal effort to meet the OSEP's "evasion" requirements.
 
+## Table of Contents 
+
+- [Mythic Cheatsheet for OSEP](#mythic-cheatsheet-for-osep)
+  * [Introduction](#introduction)
+  * [Auto generate files for different IPs](#auto-generate-files-for-different-ips)
+    + [Usage](#usage)
+    + [Personalizing the Mythic config files](#personalizing-the-mythic-config-files)
+  * [Cheatsheet](#cheatsheet)
+    + [One liner PowerShell](#one-liner-powershell)
+    + [One liner PowerShell --enc](#one-liner-powershell---enc)
+      - [Generate B64 encode PowerShell command](#generate-b64-encode-powershell-command)
+        * [Cyberchef](#cyberchef)
+        * [PowerShell](#powershell)
+        * [Python3](#python3)
+    + [One liner InstallUtil.exe enc.txt](#one-liner-installutilexe-enctxt)
+    + [One liner Linux](#one-liner-linux)
+    + [Bloodhound](#bloodhound)
+    + [mimikatz](#mimikatz)
+    + [WinPeass](#winpeass)
+    + [PrivEscCheck](#privesccheck)
+    + [PowerUp](#powerup)
+    + [SeatBelt](#seatbelt)
+    + [PowerView](#powerview)
+    + [Kerberoast](#kerberoast)
+    + [Print Spooler](#print-spooler)
+    + [Nanodump](#nanodump)
+    + [SAM REG](#sam-reg)
+    + [UAC](#uac)
+      - [UAC Check](#uac-check)
+      - [Check admin](#check-admin)
+      - [UAC BOF](#uac-bof)
+      - [SharpBypassUAC option](#sharpbypassuac-option)
+    + [Powershell history](#powershell-history)
+    + [Potato](#potato)
+    + [Socks](#socks)
+    + [Open ports](#open-ports)
+    + [Port scanner](#port-scanner)
+      - [linux](#linux)
+    + [Upload TCP Payload](#upload-tcp-payload)
+    + [Disable Defender](#disable-defender)
+    + [RDP](#rdp)
+  * [Other](#other)
+    + [MSSQL dirtree RELAY RCE](#mssql-dirtree-relay-rce)
+    + [gobuster](#gobuster)
+    + [ffuf](#ffuf)
+    + [bloodhound-python from bash](#bloodhound-python-from-bash)
+    + [Kerberoast Linux](#kerberoast-linux)
+  * [References](#references)
+
+
 ## Auto generate files for different IPs
 Both in the lab and in the exam, the VPN IP is different, so every time you start a new lab or exam, all the configurations with the hardcoded IP are invalid and must be changed. This affects Mythic in a more exaggerated way, since the payloads must be recompiled. To avoid compiling as much as possible, my entire workflow used in the lab and exam is based on an automation script to autogenerate the payloads and modify the different PowerShell scripts I always used. I also use tools such as [NetLoader](https://github.com/Flangvik/NetLoader) modified for evasion that allow remote loading, so it is not necessary to recompile code.
 
