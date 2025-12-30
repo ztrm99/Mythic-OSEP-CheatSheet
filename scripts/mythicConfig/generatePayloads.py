@@ -35,7 +35,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # JSON config file paths (always relative to script location)
 APOLLO_JSON_PATH = os.path.join(SCRIPT_DIR, "apollo.exe.json")
-POSEIDON_JSON_PATH = os.path.join(SCRIPT_DIR, "poseidon.bin.json")
+POSEIDON_JSON_PATH = os.path.join(SCRIPT_DIR, "poseidon-osep.bin.json")
 APOLLO_SERVICE_JSON_PATH = os.path.join(SCRIPT_DIR, "apollo.bin.json")
 
 

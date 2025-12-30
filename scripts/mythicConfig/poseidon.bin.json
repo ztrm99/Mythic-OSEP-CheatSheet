@@ -149,6 +149,6 @@
 		"xpc_unload"
 	],
 	"selected_os": "Linux",
-	"filename": "poseidon.bin",
+	"filename": "poseidon-osep.bin",
 	"wrapped_payload": ""
 }

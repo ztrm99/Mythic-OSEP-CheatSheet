@@ -130,6 +130,6 @@
 		"wmiexecute"
 	],
 	"selected_os": "Windows",
-	"filename": "apollo-local.exe",
+	"filename": "apollo-osep.exe",
 	"wrapped_payload": ""
 }

