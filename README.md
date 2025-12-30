@@ -4,7 +4,7 @@
 
 This repo contains my full cheatsheet and code I used to pass the OSEP using [Mythic C2](https://github.com/its-a-feature/Mythic). I've try to keep everything simple and direct and I've try to mention and link every tool and code of it's owner. 
 
-If you want more context go to my blog post: TODO
+If you want more context go to my blog post:
 
 [https://r4ulcl.com/posts/passing-the-osep-exam-using-mythic-c2](https://r4ulcl.com/posts/passing-the-osep-exam-using-mythic-c2)
 
