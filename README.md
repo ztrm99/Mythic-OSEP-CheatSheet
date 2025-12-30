@@ -108,7 +108,8 @@ To update the Mythic config files the best option is just crate a Payload using 
 
 > Note: The `apollo.exe.json`  must have that name to be used in the script, next to `apollo.bin.json` and `poseidon.bin.json`. 
 
-![[Pasted image 20251230194720.png]]
+![Export Cusom Config](img/export-config.png)
+
 ## Cheatsheet
 
 > Note: REPLACE IP `192.168.45.90` with your VPN IP and port `8080`
