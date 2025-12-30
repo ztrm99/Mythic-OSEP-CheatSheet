@@ -14,22 +14,22 @@ if [ -z "$URL" ]; then
 fi
 
 
-# Mythic 
+# Mythic
 if [ ! -d "$VENV_DIR" ]; then
   python3 -m venv "$VENV_DIR" || { echo "Failed to create venv at $VENV_DIR"; exit 1; }
 fi
 
 source "$VENV_DIR/bin/activate" || { echo "Failed to activate venv"; exit 2; }
 
-python -m pip install --upgrade pip >/dev/null 2>&1
+python3 -m pip install --upgrade pip >/dev/null 2>&1
 
 if [ -f "$REQ_FILE" ]; then
-  python -m pip install -r "$REQ_FILE" || { echo "Failed to install requirements from $REQ_FILE"; exit 3; }
+  python3 -m pip install -r "$REQ_FILE" || { echo "Failed to install requirements from $REQ_FILE"; exit 3; }
 else
   echo "Warning: requirements.txt not found at $REQ_FILE"
 fi
 
-python "$TEMPLATE_DIR/mythicConfig/generatePayloads.py" "$URL" "$PORT_MYTHIC"
+python3 "$TEMPLATE_DIR/mythicConfig/generatePayloads.py" "$URL" "$PORT_MYTHIC"
 
 # AuxConfigs files - Powershell, etc
 bash $TEMPLATE_DIR/auxConfig/loadShell.sh $URL $PORT_HTTP
