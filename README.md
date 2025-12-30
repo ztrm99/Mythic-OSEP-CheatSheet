@@ -72,7 +72,8 @@ Download the GitHub repository:
 git clone https://github.com/r4ulcl/Mythic-CheatSheet
 ```
 
-Copy/Download any utils in the utils folder, like `PowerUp.ps1`, etc. Check the `README.md`
+Copy/Download any utils in the utils folder, like `PowerUp.ps1`, etc. Check the [README.md](tree/main/scripts/utils) in utils. 
+
 
 Go to the `scripts` folder.
 
