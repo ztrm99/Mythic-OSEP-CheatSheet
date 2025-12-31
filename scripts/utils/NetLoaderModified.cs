@@ -1,3 +1,7 @@
+// Original code from: https://github.com/Flangvik/NetLoader/tree/5a58cce49d07d1165a1768f46d85e449c4fc8503
+//This is a quick PoC for OSEP AV bypass. The code modifications are a mess and could be significantly improved. 
+
+
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
