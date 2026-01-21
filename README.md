@@ -4,8 +4,7 @@
 
 This repo contains my full cheatsheet and code I used to pass the OSEP using [Mythic C2](https://github.com/its-a-feature/Mythic). I've try to keep everything simple and direct and I've try to mention and link every tool and code of it's owner. 
 
-If you want more context go to my blog post:
-
+If you want more info and context go to my blog post:
 [https://r4ulcl.com/posts/passing-the-osep-exam-using-mythic-c2](https://r4ulcl.com/posts/passing-the-osep-exam-using-mythic-c2)
 
 
@@ -37,6 +36,7 @@ If you want more context go to my blog post:
     + [Kerberoast](#kerberoast)
     + [Print Spooler](#print-spooler)
     + [Nanodump](#nanodump)
+    + [AlwaysInstallElevated](#AlwaysInstallElevated)
     + [SAM REG](#sam-reg)
     + [UAC](#uac)
       - [UAC Check](#uac-check)
@@ -598,11 +598,13 @@ proxychains -q netexec ldap  DENKIAIR-OPS.COM -u 'DB02$' -H 11fa4c77b840818b6da8
 - https://github.com/Anon-Exploiter/sliver-cheatsheet
 - https://github.com/chvancooten/OSEP-Code-Snippets
 - https://www.youtube.com/playlist?list=PLJK0fZNGiFU-iKQf9oTVpYjxL72uQUQSA
-- [gtfobins](https://gtfobins.github.io/)
-- [PayloadsAllTheThings Linux Priv-Esc](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md#files-containing-passwords)
-- [PayloadsAllTheThings windows Priv-Esc](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/windows%20-%20Privilege%20Escalation.md#eop---processes-enumeration-and-tasks)
-- [https://ippsec.rocks/](https://ippsec.rocks/)
+- https://gtfobins.github.io/
+- https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md#files-containing-passwords
+- https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/windows%20-%20Privilege%20Escalation.md#eop---processes-enumeration-and-tasks
+- https://ippsec.rocks/
 - https://github.com/hackinaggie/OSEP-Tools-v2/blob/main/Macros/process_hollowing.vba
 - https://github.com/ColeHouston/word-vba-process-hollowing
-- https://github.com/Extravenger/OSEPlayground/tree/main/06%20-%20Privilege%20Escalation/AlwaysInstallElevated
-- https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook/blob/master/Notes/AlwaysInstallElevated.md
+- https://github.com/Extravenger/OSEPlayground/
+- https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook
+- https://github.com/Flangvik/SharpCollection
+- https://github.com/fortra/impacket
