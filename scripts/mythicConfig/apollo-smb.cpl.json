@@ -1,0 +1,46 @@
+{
+	"description": "Created by mythic_admin at 2026-09-04 05:37:40 Z",
+	"payload_type": "scarecrow_wrapper",
+	"c2_profiles": [],
+	"build_parameters": [
+		{
+			"name": "loader",
+			"value": "control"
+		},
+		{
+			"name": "execute",
+			"value": "NtQueueApcThreadEx"
+		},
+		{
+			"name": "etw",
+			"value": true
+		},
+		{
+			"name": "console",
+			"value": false
+		},
+		{
+			"name": "sandbox",
+			"value": true
+		},
+		{
+			"name": "unmodified",
+			"value": false
+		},
+		{
+			"name": "injection",
+			"value": ""
+		},
+		{
+			"name": "domain",
+			"value": "www.acme.com"
+		},
+		{
+			"name": "export",
+			"value": ""
+		}
+	],
+	"selected_os": "Windows",
+	"filename": "apollo-smb.cpl",
+	"wrapped_payload": "769507aa-e14c-4248-a20e-541fa692b9d1"
+}

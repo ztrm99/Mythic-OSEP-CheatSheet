@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 # Usage: bash loadShell.sh <URL> <PORT>
 
 if [ "$#" -ne 2 ]; then
@@ -29,9 +30,9 @@ for file in "${files[@]}"; do
     sed "s|<URL>:<PORT>|${URL}:${PORT}|g" "$filepath" > "${OUTPUT_DIR}/${filename}"
     echo "Generated ${filename}"
   else
-    echo "File not found: ${filepath}"
+    echo "File not found: ${filepath}" >&2
+    exit 1
   fi
 done
 
 echo "All files processed successfully."
-

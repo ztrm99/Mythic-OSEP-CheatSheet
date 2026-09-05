@@ -1,0 +1,80 @@
+{
+	"description": "Created by mythic_admin at 2026-09-04 05:36:38 Z",
+	"payload_type": "apollo",
+	"c2_profiles": [
+		{
+			"c2_profile": "smb",
+			"c2_profile_is_p2p": true,
+			"c2_profile_parameters": {
+				"AESPSK": {
+					"dec_key": "gWFZ3sTHHtDCwmbmyV7we02gXjGp7KcCWupJV80nSsU=",
+					"enc_key": "gWFZ3sTHHtDCwmbmyV7we02gXjGp7KcCWupJV80nSsU=",
+					"value": "aes256_hmac"
+				},
+				"encrypted_exchange_check": true,
+				"killdate": "2027-09-04",
+				"pipename": "df5dz6my-0sqr-kj16-7p0m-v7wkhgs2slq8"
+			}
+		}
+	],
+	"build_parameters": [
+		{
+			"name": "debug",
+			"value": false
+		},
+		{
+			"name": "enable_keying",
+			"value": false
+		},
+		{
+			"name": "keying_method",
+			"value": "Hostname"
+		},
+		{
+			"name": "keying_value",
+			"value": ""
+		},
+		{
+			"name": "registry_path",
+			"value": ""
+		},
+		{
+			"name": "output_type",
+			"value": "Shellcode"
+		},
+		{
+			"name": "shellcode_format",
+			"value": "Binary"
+		},
+		{
+			"name": "shellcode_bypass",
+			"value": "Continue on fail"
+		},
+		{
+			"name": "registry_comparison",
+			"value": "Matches"
+		},
+		{
+			"name": "adjust_filename",
+			"value": true
+		},
+		{
+			"name": "registry_value",
+			"value": ""
+		}
+	],
+	"commands": [
+		"exit",
+		"link",
+		"list_registered_files",
+		"load",
+		"register_file",
+		"remove_registered_file",
+		"run",
+		"unlink",
+		"whoami"
+	],
+	"selected_os": "Windows",
+	"filename": "apollo-smb.bin",
+	"wrapped_payload": ""
+}

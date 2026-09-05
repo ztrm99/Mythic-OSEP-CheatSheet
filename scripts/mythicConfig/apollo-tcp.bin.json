@@ -1,0 +1,83 @@
+{
+	"description": "Created by mythic_admin at 2026-09-03 20:27:49 Z",
+	"payload_type": "apollo",
+	"c2_profiles": [
+		{
+			"c2_profile": "tcp",
+			"c2_profile_is_p2p": true,
+			"c2_profile_parameters": {
+				"AESPSK": {
+					"dec_key": "o1ONhI5K7QeDeyTBTq/AvpOgGG8vm5cI0Y8lRfEft8E=",
+					"enc_key": "o1ONhI5K7QeDeyTBTq/AvpOgGG8vm5cI0Y8lRfEft8E=",
+					"value": "aes256_hmac"
+				},
+				"encrypted_exchange_check": true,
+				"killdate": "2027-09-03",
+				"localhost_only": false,
+				"port": "43827"
+			}
+		}
+	],
+	"build_parameters": [
+		{
+			"name": "debug",
+			"value": false
+		},
+		{
+			"name": "enable_keying",
+			"value": false
+		},
+		{
+			"name": "keying_method",
+			"value": "Hostname"
+		},
+		{
+			"name": "keying_value",
+			"value": ""
+		},
+		{
+			"name": "registry_path",
+			"value": ""
+		},
+		{
+			"name": "registry_comparison",
+			"value": "Matches"
+		},
+		{
+			"name": "output_type",
+			"value": "Shellcode"
+		},
+		{
+			"name": "shellcode_format",
+			"value": "Binary"
+		},
+		{
+			"name": "shellcode_bypass",
+			"value": "Continue on fail"
+		},
+		{
+			"name": "adjust_filename",
+			"value": true
+		},
+		{
+			"name": "registry_value",
+			"value": ""
+		}
+	],
+	"commands": [
+		"exit",
+		"link",
+		"list_registered_files",
+		"load",
+		"ps",
+		"register_file",
+		"remove_registered_file",
+		"socks",
+		"unlink",
+		"upload",
+		"whoami"
+	],
+	"selected_os": "Windows",
+	"filename": "apollo-tcp.bin",
+	"wrapped_payload": ""
+}

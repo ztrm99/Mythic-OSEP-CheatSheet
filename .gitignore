@@ -1,0 +1,4 @@
+scripts/mythicConfig/venv/
+scripts/mythicConfig/__pycache__/
+payloads/
+utils/
